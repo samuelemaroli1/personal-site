@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuele Maroli - AI Engineer & Data Scientist</title>
+    <meta name="description" content="Samuele Maroli, AI Engineer & Data Scientist a Torino. Specializzato in sistemi RAG enterprise, LLM fine-tuning e Data Engineering. Co-autore del paper SemEval 2026 Task 9 su Polarization Detection.">
+    <link rel="canonical" href="https://samuelemaroli1.github.io/personal-site/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Samuele Maroli - AI Engineer & Data Scientist">
+    <meta property="og:description" content="Specializzato in sistemi RAG enterprise, LLM fine-tuning e Data Engineering. Co-autore del paper SemEval 2026 Task 9 su Polarization Detection.">
+    <meta property="og:url" content="https://samuelemaroli1.github.io/personal-site/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Samuele Maroli - AI Engineer & Data Scientist">
+    <meta name="twitter:description" content="Specializzato in sistemi RAG enterprise, LLM fine-tuning e Data Engineering. Co-autore del paper SemEval 2026 Task 9 su Polarization Detection.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Samuele Maroli",
+        "jobTitle": "AI Engineer & Data Scientist",
+        "url": "https://samuelemaroli1.github.io/personal-site/",
+        "email": "mailto:samuele.maroli@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Torino", "addressCountry": "IT" },
+        "sameAs": [
+            "https://www.linkedin.com/in/samuele-maroli-3b2127255",
+            "https://github.com/samuelemaroli1"
+        ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -268,7 +292,7 @@
 
         .project-card:hover { transform: translateY(-4px); border-color: var(--accent-primary); }
 
-        .project-header { display: flex; align-items: start; justify-content: space-between; margin-bottom: 16px; }
+        .project-header { display: flex; align-items: start; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
 
         .project-title { font-size: 22px; margin-bottom: 8px; }
 
@@ -598,6 +622,24 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
+                        <div><h3 class="project-title">POLAR Challenge — SemEval 2026</h3></div>
+                        <div style="display: flex; gap: 12px; flex-shrink: 0;">
+                            <a href="https://aclanthology.org/2026.semeval-1.313/" class="project-link" target="_blank" title="Paper (ACL Anthology)">📄</a>
+                            <a href="https://polar-semeval.github.io/" class="project-link" target="_blank" title="Challenge page">↗</a>
+                        </div>
+                    </div>
+                    <p class="project-description" data-i18n="proj5.desc"></p>
+                    <div class="experience-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">LoRA</span>
+                        <span class="tag">Fine-tuning</span>
+                        <span class="tag">Text Classification</span>
+                        <span class="tag">Published Paper</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
                         <div><h3 class="project-title">Semantic Correspondence</h3></div>
                     </div>
                     <p class="project-description" data-i18n="proj4.desc"></p>
@@ -606,20 +648,6 @@
                         <span class="tag">DINOv2</span>
                         <span class="tag">SAM</span>
                         <span class="tag">PyTorch</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div><h3 class="project-title">POLAR Challenge — SemEval 2026</h3></div>
-                        <a href="https://polar-semeval.github.io/" class="project-link" target="_blank">↗</a>
-                    </div>
-                    <p class="project-description" data-i18n="proj5.desc"></p>
-                    <div class="experience-tags">
-                        <span class="tag">NLP</span>
-                        <span class="tag">LoRA</span>
-                        <span class="tag">Fine-tuning</span>
-                        <span class="tag">Text Classification</span>
                     </div>
                 </div>
             </div>
@@ -746,7 +774,7 @@
                 'other.label': 'Altri Progetti',
                 'other.title': 'Progetti Accademici',
                 'proj4.desc': 'Progetto universitario (Advanced ML) — implementazione di algoritmi di corrispondenza semantica utilizzando modelli foundation come DINOv2 e SAM per identificare corrispondenze visive tra immagini.',
-                'proj5.desc': 'Partecipazione alla challenge POLAR-SemEval (Task 9 — Polarization Detection) con focus su fine-tuning di modelli linguistici tramite LoRA per task di classificazione e analisi del linguaggio naturale. Report disponibile su GitHub.',
+                'proj5.desc': 'Partecipazione alla challenge POLAR-SemEval (Task 9 — Polarization Detection) con fine-tuning di modelli linguistici tramite LoRA per la classificazione del linguaggio naturale. Paper pubblicato in ACL Anthology (SemEval 2026).',
 
                 'edu.label': 'Formazione',
                 'edu.title': 'Percorso accademico',
@@ -800,7 +828,7 @@
                 'other.label': 'Other Projects',
                 'other.title': 'Academic Projects',
                 'proj4.desc': 'University project (Advanced ML) — implementation of semantic correspondence algorithms using foundation models such as DINOv2 and SAM to identify visual correspondences between images.',
-                'proj5.desc': 'Participation in the POLAR-SemEval challenge (Task 9 — Polarization Detection) with focus on fine-tuning language models via LoRA for classification tasks and natural language analysis. Report available on GitHub.',
+                'proj5.desc': 'Participation in the POLAR-SemEval challenge (Task 9 — Polarization Detection), fine-tuning language models via LoRA for natural language classification. Paper published in the ACL Anthology (SemEval 2026).',
 
                 'edu.label': 'Education',
                 'edu.title': 'Academic background',
