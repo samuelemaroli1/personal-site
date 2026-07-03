@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuele Maroli - AI Engineer & Data Scientist</title>
     <meta name="google-site-verification" content="Pl7qR2EhATGZ5VgNsn9Dqn0kPGb6ixCl1U0WlROpZ9M" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta name="description" content="Samuele Maroli, AI Engineer & Data Scientist a Torino. Specializzato in sistemi RAG enterprise, LLM fine-tuning e Data Engineering. Co-autore del paper SemEval 2026 Task 9 su Polarization Detection.">
     <link rel="canonical" href="https://samuelemaroli1.github.io/personal-site/">
     <meta property="og:type" content="website">
@@ -39,8 +40,8 @@
     <header class="topbar">
         <span class="topbar-name">Samuele Maroli</span>
         <div class="lang-toggle">
-            <button class="lang-btn active" id="btn-it" onclick="setLang('it')">IT</button>
-            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn active" id="btn-it" onclick="setLang('it')" title="Italiano" aria-label="Italiano">🇮🇹</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')" title="English" aria-label="English">🇬🇧</button>
         </div>
     </header>
 
@@ -72,19 +73,18 @@
             </div>
 
             <div class="hero-visual">
-                <svg class="pipeline-diagram" width="170" height="300" viewBox="0 0 170 300" aria-hidden="true">
-                    <text x="0" y="14" class="caption">Fig. 1 — RAG pipeline</text>
-                    <line class="node-line" x1="6" y1="46" x2="6" y2="116"></line>
-                    <line class="node-line" x1="6" y1="126" x2="6" y2="196"></line>
-                    <line class="node-line" x1="6" y1="206" x2="6" y2="276"></line>
-                    <circle class="node-dot" cx="6" cy="40" r="5"></circle>
-                    <circle class="node-dot is-active" cx="6" cy="120" r="5"></circle>
-                    <circle class="node-dot is-active" cx="6" cy="200" r="5"></circle>
-                    <circle class="node-dot" cx="6" cy="280" r="5"></circle>
-                    <text x="22" y="44">Query</text>
-                    <text x="22" y="124" class="is-active">Retrieve</text>
-                    <text x="22" y="204" class="is-active">Rerank</text>
-                    <text x="22" y="284">Generate</text>
+                <svg class="pipeline-diagram" width="170" height="280" viewBox="0 0 170 280" aria-hidden="true">
+                    <line class="node-line" x1="6" y1="26" x2="6" y2="96"></line>
+                    <line class="node-line" x1="6" y1="106" x2="6" y2="176"></line>
+                    <line class="node-line" x1="6" y1="186" x2="6" y2="256"></line>
+                    <circle class="node-dot" cx="6" cy="20" r="5"></circle>
+                    <circle class="node-dot is-active" cx="6" cy="100" r="5"></circle>
+                    <circle class="node-dot is-active" cx="6" cy="180" r="5"></circle>
+                    <circle class="node-dot" cx="6" cy="260" r="5"></circle>
+                    <text x="22" y="24">Query</text>
+                    <text x="22" y="104" class="is-active">Retrieve</text>
+                    <text x="22" y="184" class="is-active">Rerank</text>
+                    <text x="22" y="264">Generate</text>
                 </svg>
             </div>
         </div>
@@ -270,17 +270,25 @@
             </div>
 
             <div class="project-list">
-                <div class="project">
-                    <h3 class="project-title" data-i18n="proj5.title"></h3>
+                <div class="project project-featured">
+                    <div class="mono project-kicker">POLAR Challenge — SemEval 2026</div>
+                    <h3 class="project-title">MINDS at SemEval-2026 Task 9: A Multi-Paradigm Approach to Cross-Lingual Polarization Detection</h3>
+                    <p class="mono project-meta" data-i18n="proj5.venue"></p>
                     <p class="project-desc" data-i18n="proj5.desc"></p>
                     <div class="tag-row">
-                        <span class="tag">NLP</span>
+                        <span class="tag">Multilingual NLP</span>
+                        <span class="tag">Encoder Fine-tuning</span>
                         <span class="tag">LoRA</span>
-                        <span class="tag">Fine-tuning</span>
-                        <span class="tag">Text Classification</span>
+                        <span class="tag">Multi-label Classification</span>
                         <span class="tag">Published Paper</span>
                     </div>
-                    <p class="citation"><span data-i18n="proj5.cite"></span> — <a href="https://aclanthology.org/2026.semeval-1.313/" target="_blank" rel="noopener">ACL Anthology ↗</a> · <a href="https://polar-semeval.github.io/" target="_blank" rel="noopener">challenge page ↗</a></p>
+                    <div class="cite-block">
+                        Iannielli, A., Maroli, S., Roberto, M., Sammartino, S., Vacirca, V., Savelli, C., Coppola, R., &amp; Giobergia, F. (2026). <em>MINDS at SemEval-2026 Task 9: A Multi-Paradigm Approach to Cross-Lingual Polarization Detection.</em> In Proceedings of the 20th International Workshop on Semantic Evaluation (SemEval-2026), pp. 2475–2486.
+                    </div>
+                    <div class="cite-links">
+                        <a href="https://aclanthology.org/2026.semeval-1.313/" target="_blank" rel="noopener" data-i18n="proj5.link1"></a>
+                        <a href="https://polar-semeval.github.io/" target="_blank" rel="noopener" data-i18n="proj5.link2"></a>
+                    </div>
                 </div>
 
                 <div class="project">

@@ -17,7 +17,6 @@
     --signal: #8C2F1E;
     --signal-deep: #5E1F13;
     --signal-soft: rgba(140, 47, 30, 0.10);
-    --accent2: #A8781E;
     --shadow-soft: 0 1px 2px rgba(33, 29, 22, 0.05), 0 6px 16px rgba(33, 29, 22, 0.06);
 
     --font-display: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
@@ -86,24 +85,23 @@ a { color: inherit; }
 
 .lang-toggle {
     display: flex;
-    gap: 2px;
-    font-family: var(--font-mono);
-    font-size: 12px;
+    gap: 4px;
 }
 
 .lang-btn {
-    padding: 5px 10px;
-    border: 1px solid var(--rule);
+    padding: 4px 6px;
+    border: 1px solid transparent;
     background: transparent;
-    color: var(--ink-muted);
+    font-size: 18px;
+    line-height: 1;
     cursor: pointer;
-    letter-spacing: 0.04em;
+    border-radius: 3px;
+    opacity: 0.5;
+    transition: opacity 0.15s ease, background 0.15s ease;
 }
 
-.lang-btn + .lang-btn { border-left: none; }
-
-.lang-btn.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-.lang-btn:hover:not(.active) { color: var(--ink); background: var(--paper-raised); }
+.lang-btn.active { opacity: 1; background: var(--paper-raised); }
+.lang-btn:hover:not(.active) { opacity: 0.85; }
 .lang-btn:focus-visible, a:focus-visible, .btn:focus-visible, .credit:focus-visible {
     outline: 2px solid var(--signal);
     outline-offset: 2px;
@@ -206,9 +204,7 @@ a { color: inherit; }
 .pipeline-diagram .node-line { stroke: var(--rule); stroke-width: 1.5; }
 .pipeline-diagram .node-dot { fill: var(--paper); stroke: var(--ink-muted); stroke-width: 1.5; }
 .pipeline-diagram .node-dot.is-active { fill: var(--signal); stroke: var(--signal); }
-.pipeline-diagram .node-dot.is-accent { fill: var(--accent2); stroke: var(--accent2); }
 .pipeline-diagram text.is-active { fill: var(--signal-deep); font-weight: 500; }
-.pipeline-diagram .caption { fill: var(--ink-faint); font-size: 10px; text-transform: none; letter-spacing: 0.02em; }
 
 .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px; }
 
@@ -326,14 +322,44 @@ section { padding: 88px 0; border-top: 1px solid var(--rule); }
 .project-title { font-size: 20px; margin-bottom: 10px; }
 .project-desc { color: var(--ink-muted); margin-bottom: 16px; max-width: var(--measure); }
 
-.citation {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    margin-top: 4px;
+/* Featured project (published paper) */
+.project-featured {
+    border-left: 3px solid var(--signal);
+    background: var(--signal-soft);
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
-.citation a { color: var(--signal); text-decoration: none; border-bottom: 1px solid transparent; }
-.citation a:hover { border-bottom-color: var(--signal); }
+.project-kicker { margin-bottom: 10px; }
+.project-meta { color: var(--ink-muted); margin-bottom: 14px; }
+
+.cite-block {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+    padding: 18px 20px;
+    margin: 20px 0;
+    max-width: var(--measure);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+}
+
+.cite-block em { font-style: italic; color: var(--ink); }
+
+.cite-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.cite-links a {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    padding: 8px 14px;
+    border: 1px solid var(--rule);
+    color: var(--signal);
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.cite-links a:hover { background: var(--paper); border-color: var(--signal); }
 
 .subsection-head { margin: 56px 0 32px; padding-top: 40px; border-top: 1px solid var(--rule); }
 .subsection-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
