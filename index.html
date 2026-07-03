@@ -31,7 +31,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -44,331 +44,340 @@
         </div>
     </header>
 
-    <nav class="rail" aria-label="Section index">
-        <a class="rail-link" href="#top"><span class="rail-label" data-i18n="rail.top"></span></a>
-        <a class="rail-link" href="#research"><span class="rail-label" data-i18n="rail.research"></span></a>
-        <a class="rail-link" href="#experience"><span class="rail-label" data-i18n="rail.experience"></span></a>
-        <a class="rail-link" href="#projects"><span class="rail-label" data-i18n="rail.projects"></span></a>
-        <a class="rail-link" href="#skills"><span class="rail-label" data-i18n="rail.skills"></span></a>
-        <a class="rail-link" href="#education"><span class="rail-label" data-i18n="rail.education"></span></a>
-        <a class="rail-link" href="#contact"><span class="rail-label" data-i18n="rail.contact"></span></a>
-    </nav>
-
-    <main>
-        <!-- Hero -->
-        <section id="top" class="hero">
-            <div class="container">
+    <!-- Hero / Abstract -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
                 <div class="hero-eyebrow" data-i18n="hero.eyebrow"></div>
                 <h1>Samuele Maroli</h1>
-                <div class="hero-rule"></div>
-                <p class="hero-headline" data-i18n="hero.headline"></p>
-                <p class="hero-description" data-i18n="hero.description"></p>
+                <p class="hero-role" data-i18n="hero.role"></p>
 
-                <div class="keywords">
-                    <span class="keyword-chip">RAG Systems</span>
-                    <span class="keyword-chip">LLM Fine-tuning</span>
-                    <span class="keyword-chip">Data Engineering</span>
-                    <span class="keyword-chip">Computer Vision</span>
-                    <span class="keyword-chip">NLP</span>
+                <div class="abstract">
+                    <div class="abstract-label" data-i18n="abstract.label"></div>
+                    <p data-i18n="hero.description"></p>
+                    <p class="keywords">
+                        <span data-i18n="keywords.label"></span>
+                        <span class="keyword-chip">RAG Systems</span>
+                        <span class="keyword-chip">LLM Fine-tuning</span>
+                        <span class="keyword-chip">Data Engineering</span>
+                        <span class="keyword-chip">Computer Vision</span>
+                        <span class="keyword-chip">NLP</span>
+                    </p>
                 </div>
 
                 <div class="cta-row">
-                    <a href="#research" class="btn btn-primary" data-i18n="hero.cta1"></a>
+                    <a href="#experience" class="btn btn-primary" data-i18n="hero.cta1"></a>
                     <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2"></a>
                 </div>
-
-                <div class="stats-row">
-                    <div class="stat">
-                        <span class="stat-num">2024</span>
-                        <span class="stat-label" data-i18n="stat1.label"></span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">1</span>
-                        <span class="stat-label" data-i18n="stat2.label"></span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">94/110</span>
-                        <span class="stat-label" data-i18n="stat3.label"></span>
-                    </div>
-                </div>
             </div>
-        </section>
 
-        <!-- Selected Publication -->
-        <section id="research" class="feature-block">
-            <div class="container">
-                <div class="section-head">
-                    <div class="mono section-eyebrow" data-i18n="pub.label"></div>
-                    <h2 class="section-title">MINDS at SemEval-2026 Task 9: A Multi-Paradigm Approach to Cross-Lingual Polarization Detection</h2>
-                    <p class="mono pub-meta" data-i18n="pub.venue"></p>
-                </div>
-
-                <p class="project-desc" data-i18n="pub.desc"></p>
-
-                <div class="tag-row">
-                    <span class="tag">Multilingual NLP</span>
-                    <span class="tag">Encoder Fine-tuning</span>
-                    <span class="tag">LoRA</span>
-                    <span class="tag">Multi-label Classification</span>
-                    <span class="tag">Published Paper</span>
-                </div>
-
-                <div class="cite-block">
-                    Iannielli, A., Maroli, S., Roberto, M., Sammartino, S., Vacirca, V., Savelli, C., Coppola, R., &amp; Giobergia, F. (2026). <em>MINDS at SemEval-2026 Task 9: A Multi-Paradigm Approach to Cross-Lingual Polarization Detection.</em> In Proceedings of the 20th International Workshop on Semantic Evaluation (SemEval-2026), pp. 2475–2486.
-                </div>
-
-                <div class="cta-row">
-                    <a href="https://aclanthology.org/2026.semeval-1.313/" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="pub.link1"></a>
-                    <a href="https://polar-semeval.github.io/" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="pub.link2"></a>
-                </div>
+            <div class="hero-visual">
+                <svg class="pipeline-diagram" width="170" height="300" viewBox="0 0 170 300" aria-hidden="true">
+                    <text x="0" y="14" class="caption">Fig. 1 — RAG pipeline</text>
+                    <line class="node-line" x1="6" y1="46" x2="6" y2="116"></line>
+                    <line class="node-line" x1="6" y1="126" x2="6" y2="196"></line>
+                    <line class="node-line" x1="6" y1="206" x2="6" y2="276"></line>
+                    <circle class="node-dot" cx="6" cy="40" r="5"></circle>
+                    <circle class="node-dot is-active" cx="6" cy="120" r="5"></circle>
+                    <circle class="node-dot is-active" cx="6" cy="200" r="5"></circle>
+                    <circle class="node-dot" cx="6" cy="280" r="5"></circle>
+                    <text x="22" y="44">Query</text>
+                    <text x="22" y="124" class="is-active">Retrieve</text>
+                    <text x="22" y="204" class="is-active">Rerank</text>
+                    <text x="22" y="284">Generate</text>
+                </svg>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Experience -->
-        <section id="experience">
-            <div class="container">
-                <div class="section-head">
-                    <div class="mono section-eyebrow" data-i18n="exp.label"></div>
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">1</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="exp.label"></div>
                     <h2 class="section-title" data-i18n="exp.title"></h2>
                     <p class="section-description" data-i18n="exp.desc"></p>
                 </div>
-
-                <div class="entry-list">
-                    <div class="entry">
-                        <div class="entry-period" data-i18n="exp1.period"></div>
-                        <div>
-                            <h3 class="entry-title" data-i18n="exp1.title"></h3>
-                            <div class="entry-org">DedaAI</div>
-                            <p class="entry-desc" data-i18n="exp1.desc"></p>
-                            <div class="tag-row">
-                                <span class="tag">RAG Systems</span>
-                                <span class="tag">Qdrant</span>
-                                <span class="tag">Azure</span>
-                                <span class="tag">IBM WatsonX</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">SharePoint API</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="entry">
-                        <div class="entry-period" data-i18n="exp2.period"></div>
-                        <div>
-                            <h3 class="entry-title" data-i18n="exp2.title"></h3>
-                            <div class="entry-org">DedaBit</div>
-                            <p class="entry-desc" data-i18n="exp2.desc"></p>
-                            <div class="tag-row">
-                                <span class="tag">WatsonX</span>
-                                <span class="tag">IBM Cloud</span>
-                                <span class="tag">Microsoft Fabric</span>
-                                <span class="tag">Data Pipeline</span>
-                                <span class="tag">Python</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="entry">
-                        <div class="entry-period" data-i18n="exp3.period"></div>
-                        <div>
-                            <h3 class="entry-title" data-i18n="exp3.title"></h3>
-                            <div class="entry-org">SCAI</div>
-                            <p class="entry-desc" data-i18n="exp3.desc"></p>
-                            <div class="tag-row">
-                                <span class="tag">Database Engineering</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">Data Cleaning</span>
-                                <span class="tag">ETL</span>
-                                <span class="tag">Pandas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </section>
 
-        <!-- Projects -->
-        <section id="projects">
-            <div class="container">
-                <div class="section-head">
-                    <div class="mono section-eyebrow" data-i18n="proj.label"></div>
-                    <h2 class="section-title" data-i18n="proj.title"></h2>
-                    <p class="section-description" data-i18n="proj.desc"></p>
-                </div>
-
-                <div class="project-list">
-                    <div class="project">
-                        <h3 class="project-title" data-i18n="proj1.title"></h3>
-                        <p class="project-desc" data-i18n="proj1.desc"></p>
-                        <div class="tag-row">
-                            <span class="tag">RAG Architecture</span>
-                            <span class="tag">Vector Databases</span>
-                            <span class="tag">LLM Integration</span>
-                            <span class="tag">Research</span>
-                            <span class="tag">Production</span>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <h3 class="project-title" data-i18n="proj2.title"></h3>
-                        <p class="project-desc" data-i18n="proj2.desc"></p>
+            <div class="entry-list">
+                <div class="entry">
+                    <div class="entry-period" data-i18n="exp1.period"></div>
+                    <div>
+                        <h3 class="entry-title" data-i18n="exp1.title"></h3>
+                        <div class="entry-org">DedaAI</div>
+                        <p class="entry-desc" data-i18n="exp1.desc"></p>
                         <div class="tag-row">
                             <span class="tag">RAG Systems</span>
                             <span class="tag">Qdrant</span>
-                            <span class="tag">IBM WatsonX</span>
                             <span class="tag">Azure</span>
-                            <span class="tag">Cloud Deploy</span>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <h3 class="project-title" data-i18n="proj3.title"></h3>
-                        <p class="project-desc" data-i18n="proj3.desc"></p>
-                        <div class="tag-row">
-                            <span class="tag">Retrieval Strategies</span>
-                            <span class="tag">Reranking</span>
-                            <span class="tag">Prompt Engineering</span>
-                            <span class="tag">Evaluation</span>
+                            <span class="tag">IBM WatsonX</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SharePoint API</span>
                         </div>
                     </div>
                 </div>
 
-                <p class="also-note"><span class="mono">+</span> <strong data-i18n="proj4.title"></strong> — <span data-i18n="proj4.desc"></span></p>
-            </div>
-        </section>
+                <div class="entry">
+                    <div class="entry-period" data-i18n="exp2.period"></div>
+                    <div>
+                        <h3 class="entry-title" data-i18n="exp2.title"></h3>
+                        <div class="entry-org">DedaBit</div>
+                        <p class="entry-desc" data-i18n="exp2.desc"></p>
+                        <div class="tag-row">
+                            <span class="tag">WatsonX</span>
+                            <span class="tag">IBM Cloud</span>
+                            <span class="tag">Microsoft Fabric</span>
+                            <span class="tag">Data Pipeline</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Skills -->
-        <section id="skills">
-            <div class="container">
-                <div class="section-head">
-                    <div class="mono section-eyebrow" data-i18n="skills.label"></div>
+                <div class="entry">
+                    <div class="entry-period" data-i18n="exp3.period"></div>
+                    <div>
+                        <h3 class="entry-title" data-i18n="exp3.title"></h3>
+                        <div class="entry-org">SCAI</div>
+                        <p class="entry-desc" data-i18n="exp3.desc"></p>
+                        <div class="tag-row">
+                            <span class="tag">Database Engineering</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Data Cleaning</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">2</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="skills.label"></div>
                     <h2 class="section-title" data-i18n="skills.title"></h2>
                 </div>
+            </div>
 
-                <div class="skills-grid">
-                    <div>
-                        <div class="skill-category-label">Artificial Intelligence</div>
-                        <div class="skill-list">
-                            <div class="skill-item">RAG Systems (Naive, Advanced, Hybrid)</div>
-                            <div class="skill-item">Machine Learning &amp; Deep Learning</div>
-                            <div class="skill-item">Computer Vision (DINOv2, SAM)</div>
-                            <div class="skill-item">LLM Fine-tuning (LoRA, QLoRA)</div>
-                            <div class="skill-item">NLP &amp; Text Classification</div>
-                            <div class="skill-item">Embedding Models &amp; Vector Search</div>
-                        </div>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category-label">Artificial Intelligence</div>
+                    <div class="skill-list">
+                        <div class="skill-item">RAG Systems (Naive, Advanced, Hybrid)</div>
+                        <div class="skill-item">Machine Learning &amp; Deep Learning</div>
+                        <div class="skill-item">Computer Vision (DINOv2, SAM)</div>
+                        <div class="skill-item">LLM Fine-tuning (LoRA, QLoRA)</div>
+                        <div class="skill-item">NLP &amp; Text Classification</div>
+                        <div class="skill-item">Embedding Models &amp; Vector Search</div>
                     </div>
+                </div>
 
-                    <div>
-                        <div class="skill-category-label">Data Engineering</div>
-                        <div class="skill-list">
-                            <div class="skill-item">Database Design &amp; Optimization</div>
-                            <div class="skill-item">ETL Pipelines</div>
-                            <div class="skill-item">Vector Databases (Qdrant)</div>
-                            <div class="skill-item">Data Cleaning &amp; Normalization</div>
-                            <div class="skill-item">SQL &amp; NoSQL</div>
-                            <div class="skill-item">Microsoft Fabric</div>
-                        </div>
+                <div>
+                    <div class="skill-category-label">Data Engineering</div>
+                    <div class="skill-list">
+                        <div class="skill-item">Database Design &amp; Optimization</div>
+                        <div class="skill-item">ETL Pipelines</div>
+                        <div class="skill-item">Vector Databases (Qdrant)</div>
+                        <div class="skill-item">Data Cleaning &amp; Normalization</div>
+                        <div class="skill-item">SQL &amp; NoSQL</div>
+                        <div class="skill-item">Microsoft Fabric</div>
                     </div>
+                </div>
 
-                    <div>
-                        <div class="skill-category-label">Cloud &amp; DevOps</div>
-                        <div class="skill-list">
-                            <div class="skill-item">IBM WatsonX</div>
-                            <div class="skill-item">Azure (AI Search, OpenAI)</div>
-                            <div class="skill-item">SharePoint / Microsoft Graph API</div>
-                            <div class="skill-item">Docker</div>
-                            <div class="skill-item">Git &amp; GitHub</div>
-                        </div>
+                <div>
+                    <div class="skill-category-label">Cloud &amp; DevOps</div>
+                    <div class="skill-list">
+                        <div class="skill-item">IBM WatsonX</div>
+                        <div class="skill-item">Azure (AI Search, OpenAI)</div>
+                        <div class="skill-item">SharePoint / Microsoft Graph API</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Git &amp; GitHub</div>
                     </div>
+                </div>
 
-                    <div>
-                        <div class="skill-category-label">Programming</div>
-                        <div class="skill-list">
-                            <div class="skill-item">Python (PyTorch, TensorFlow, FastAPI)</div>
-                            <div class="skill-item">Java</div>
-                            <div class="skill-item">C# / C / Assembly</div>
-                            <div class="skill-item">SQL</div>
-                        </div>
+                <div>
+                    <div class="skill-category-label">Programming</div>
+                    <div class="skill-list">
+                        <div class="skill-item">Python (PyTorch, TensorFlow, FastAPI)</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">C# / C / Assembly</div>
+                        <div class="skill-item">SQL</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Education -->
-        <section id="education">
-            <div class="container">
-                <div class="section-head">
-                    <div class="mono section-eyebrow" data-i18n="edu.label"></div>
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">3</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="proj.label"></div>
+                    <h2 class="section-title" data-i18n="proj.title"></h2>
+                    <p class="section-description" data-i18n="proj.desc"></p>
+                </div>
+            </div>
+
+            <div class="project-list">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj1.title"></h3>
+                    <p class="project-desc" data-i18n="proj1.desc"></p>
+                    <div class="tag-row">
+                        <span class="tag">RAG Architecture</span>
+                        <span class="tag">Vector Databases</span>
+                        <span class="tag">LLM Integration</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Production</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj2.title"></h3>
+                    <p class="project-desc" data-i18n="proj2.desc"></p>
+                    <div class="tag-row">
+                        <span class="tag">RAG Systems</span>
+                        <span class="tag">Qdrant</span>
+                        <span class="tag">IBM WatsonX</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">Cloud Deploy</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj3.title"></h3>
+                    <p class="project-desc" data-i18n="proj3.desc"></p>
+                    <div class="tag-row">
+                        <span class="tag">Retrieval Strategies</span>
+                        <span class="tag">Reranking</span>
+                        <span class="tag">Prompt Engineering</span>
+                        <span class="tag">Evaluation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection-head">
+                <div class="subsection-label" data-i18n="other.label"></div>
+                <h2 class="subsection-title" data-i18n="other.title"></h2>
+            </div>
+
+            <div class="project-list">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj5.title"></h3>
+                    <p class="project-desc" data-i18n="proj5.desc"></p>
+                    <div class="tag-row">
+                        <span class="tag">NLP</span>
+                        <span class="tag">LoRA</span>
+                        <span class="tag">Fine-tuning</span>
+                        <span class="tag">Text Classification</span>
+                        <span class="tag">Published Paper</span>
+                    </div>
+                    <p class="citation"><span data-i18n="proj5.cite"></span> — <a href="https://aclanthology.org/2026.semeval-1.313/" target="_blank" rel="noopener">ACL Anthology ↗</a> · <a href="https://polar-semeval.github.io/" target="_blank" rel="noopener">challenge page ↗</a></p>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj4.title"></h3>
+                    <p class="project-desc" data-i18n="proj4.desc"></p>
+                    <div class="tag-row">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">DINOv2</span>
+                        <span class="tag">SAM</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">4</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="edu.label"></div>
                     <h2 class="section-title" data-i18n="edu.title"></h2>
                 </div>
+            </div>
 
-                <div class="edu-list">
-                    <div class="edu-entry">
-                        <div class="edu-period" data-i18n="edu1.details"></div>
-                        <div>
-                            <h3 class="edu-degree" data-i18n="edu1.degree"></h3>
-                            <div class="edu-school">Politecnico di Torino</div>
-                            <p class="edu-desc" data-i18n="edu1.desc"></p>
-                        </div>
+            <div class="edu-list">
+                <div class="edu-entry">
+                    <div class="edu-period" data-i18n="edu1.details"></div>
+                    <div>
+                        <h3 class="edu-degree" data-i18n="edu1.degree"></h3>
+                        <div class="edu-school">Politecnico di Torino</div>
+                        <p class="edu-desc" data-i18n="edu1.desc"></p>
                     </div>
+                </div>
 
-                    <div class="edu-entry">
-                        <div class="edu-period" data-i18n="edu2.details"></div>
-                        <div>
-                            <h3 class="edu-degree" data-i18n="edu2.degree"></h3>
-                            <div class="edu-school">Politecnico di Torino</div>
-                            <p class="edu-desc" data-i18n="edu2.desc"></p>
-                        </div>
+                <div class="edu-entry">
+                    <div class="edu-period" data-i18n="edu2.details"></div>
+                    <div>
+                        <h3 class="edu-degree" data-i18n="edu2.degree"></h3>
+                        <div class="edu-school">Politecnico di Torino</div>
+                        <p class="edu-desc" data-i18n="edu2.desc"></p>
                     </div>
+                </div>
 
-                    <div class="edu-entry">
-                        <div class="edu-period" data-i18n="edu3.details"></div>
-                        <div>
-                            <h3 class="edu-degree" data-i18n="edu3.degree"></h3>
-                            <div class="edu-school">ITIS Majorana — Grugliasco (TO)</div>
-                            <p class="edu-desc" data-i18n="edu3.desc"></p>
-                        </div>
+                <div class="edu-entry">
+                    <div class="edu-period" data-i18n="edu3.details"></div>
+                    <div>
+                        <h3 class="edu-degree" data-i18n="edu3.degree"></h3>
+                        <div class="edu-school">ITIS Majorana — Grugliasco (TO)</div>
+                        <p class="edu-desc" data-i18n="edu3.desc"></p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact -->
-        <section id="contact">
-            <div class="container">
-                <div class="section-head">
-                    <div class="mono section-eyebrow" data-i18n="contact.label"></div>
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">5</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="contact.label"></div>
                     <h2 class="section-title" data-i18n="contact.title"></h2>
                     <p class="section-description" data-i18n="contact.desc"></p>
                 </div>
+            </div>
 
-                <div class="contact-list">
-                    <a href="mailto:samuele.maroli@gmail.com" class="contact-row">
-                        <span class="contact-label" data-i18n="contact.email.label"></span>
-                        <span class="contact-value">samuele.maroli@gmail.com</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/samuele-maroli-3b2127255" class="contact-row" target="_blank" rel="noopener">
-                        <span class="contact-label" data-i18n="contact.linkedin.label"></span>
-                        <span class="contact-value" data-i18n="contact.linkedin.value"></span>
-                    </a>
-                    <a href="https://github.com/samuelemaroli1" class="contact-row" target="_blank" rel="noopener">
-                        <span class="contact-label" data-i18n="contact.github.label"></span>
-                        <span class="contact-value">samuelemaroli1</span>
-                    </a>
-                    <div class="contact-row">
-                        <span class="contact-label" data-i18n="contact.location.label"></span>
-                        <span class="contact-value" data-i18n="contact.location.value"></span>
-                    </div>
+            <div class="contact-list">
+                <a href="mailto:samuele.maroli@gmail.com" class="contact-row">
+                    <span class="contact-label" data-i18n="contact.email.label"></span>
+                    <span class="contact-value">samuele.maroli@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/samuele-maroli-3b2127255" class="contact-row" target="_blank" rel="noopener">
+                    <span class="contact-label" data-i18n="contact.linkedin.label"></span>
+                    <span class="contact-value" data-i18n="contact.linkedin.value"></span>
+                </a>
+                <a href="https://github.com/samuelemaroli1" class="contact-row" target="_blank" rel="noopener">
+                    <span class="contact-label" data-i18n="contact.github.label"></span>
+                    <span class="contact-value">samuelemaroli1</span>
+                </a>
+                <div class="contact-row">
+                    <span class="contact-label" data-i18n="contact.location.label"></span>
+                    <span class="contact-value" data-i18n="contact.location.value"></span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <p class="footer-text" data-i18n="footer.text"></p>
-            </div>
-        </footer>
-    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text" data-i18n="footer.text"></p>
+        </div>
+    </footer>
 
     <script src="assets/script.js"></script>
 </body>
