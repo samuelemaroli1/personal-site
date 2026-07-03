@@ -34,13 +34,18 @@ const translations = {
         'proj3.title': 'RAG Optimization & Experimentation',
         'proj3.desc': 'Sperimentazione su tecniche avanzate di RAG: hybrid search, reranking, query expansion, context compression e prompt engineering per massimizzare la qualità delle risposte in contesti enterprise.',
 
-        'other.label': 'Altri progetti',
-        'other.title': 'Progetti accademici',
-        'proj5.title': 'POLAR Challenge — SemEval 2026',
-        'proj5.desc': 'Partecipazione alla challenge POLAR-SemEval (Task 9 — Polarization Detection) con fine-tuning di modelli linguistici tramite LoRA per la classificazione del linguaggio naturale.',
-        'proj5.cite': 'Maroli, S. et al. — Task 9: Polarization Detection, SemEval-2026',
         'proj4.title': 'Semantic Correspondence',
-        'proj4.desc': 'Progetto universitario (Advanced ML) — implementazione di algoritmi di corrispondenza semantica utilizzando modelli foundation come DINOv2 e SAM per identificare corrispondenze visive tra immagini.',
+        'proj4.desc': 'progetto universitario (Advanced ML) — algoritmi di corrispondenza semantica con modelli foundation come DINOv2 e SAM per identificare corrispondenze visive tra immagini.',
+
+        'stat1.label': 'Inizio del percorso in AI',
+        'stat2.label': 'Paper peer-reviewed (ACL Anthology)',
+        'stat3.label': 'Laurea in Ingegneria Informatica',
+
+        'pub.label': 'Pubblicazione selezionata',
+        'pub.venue': 'SemEval-2026 · San Diego, California · Luglio 2026 — Team MINDS',
+        'pub.desc': 'Il team MINDS (otto ricercatori del Politecnico di Torino) affronta il rilevamento della polarizzazione online in 22 lingue, confrontando tre paradigmi di modellazione: fine-tuning di encoder multilingue, transfer learning basato su traduzione e reasoning generativo tramite prompting. Per la classificazione multi-label abbiamo introdotto un\'architettura a cascata a due stadi, pensata per ridurre i falsi positivi in condizioni di forte sbilanciamento delle classi. Gli encoder multilingue si sono rivelati il paradigma più efficace per il rilevamento binario della polarizzazione, mentre il prompting con reasoning è risultato competitivo nella classificazione fine-grained delle categorie.',
+        'pub.link1': 'Leggi su ACL Anthology →',
+        'pub.link2': 'Pagina della challenge →',
 
         'edu.label': 'Formazione',
         'edu.title': 'Percorso accademico',
@@ -101,13 +106,18 @@ const translations = {
         'proj3.title': 'RAG Optimization & Experimentation',
         'proj3.desc': 'Experimentation on advanced RAG techniques: hybrid search, reranking, query expansion, context compression and prompt engineering to maximise response quality in enterprise contexts.',
 
-        'other.label': 'Other projects',
-        'other.title': 'Academic projects',
-        'proj5.title': 'POLAR Challenge — SemEval 2026',
-        'proj5.desc': 'Participation in the POLAR-SemEval challenge (Task 9 — Polarization Detection), fine-tuning language models via LoRA for natural language classification.',
-        'proj5.cite': 'Maroli, S. et al. — Task 9: Polarization Detection, SemEval-2026',
         'proj4.title': 'Semantic Correspondence',
-        'proj4.desc': 'University project (Advanced ML) — implementation of semantic correspondence algorithms using foundation models such as DINOv2 and SAM to identify visual correspondences between images.',
+        'proj4.desc': 'university project (Advanced ML) — semantic correspondence algorithms using foundation models such as DINOv2 and SAM to identify visual correspondences between images.',
+
+        'stat1.label': 'Started working in AI',
+        'stat2.label': 'Peer-reviewed paper (ACL Anthology)',
+        'stat3.label': 'Computer Engineering degree',
+
+        'pub.label': 'Selected publication',
+        'pub.venue': 'SemEval-2026 · San Diego, California · July 2026 — Team MINDS',
+        'pub.desc': 'Team MINDS (eight researchers from Politecnico di Torino) tackles online polarization detection across 22 languages, comparing three modelling paradigms: multilingual encoder fine-tuning, translation-based transfer learning, and prompting-based generative reasoning. For multi-label classification we introduced a two-stage cascaded architecture designed to reduce false positives under severe class imbalance. Multilingual encoders proved the strongest paradigm for binary polarization detection, while reasoning-based prompting was competitive on fine-grained category classification.',
+        'pub.link1': 'Read on ACL Anthology →',
+        'pub.link2': 'Challenge page →',
 
         'edu.label': 'Education',
         'edu.title': 'Academic background',
