@@ -363,7 +363,7 @@ section { padding: 88px 0; border-top: 1px solid var(--rule); }
 
 .cite-block em { font-style: italic; color: var(--ink); }
 
-.cite-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.cite-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 
 .cite-links a {
     font-family: var(--font-mono);
