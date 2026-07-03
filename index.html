@@ -47,19 +47,45 @@
     <!-- Hero / Abstract -->
     <section class="hero">
         <div class="container">
-            <div class="hero-eyebrow" data-i18n="hero.eyebrow"></div>
-            <h1>Samuele Maroli</h1>
-            <p class="hero-role" data-i18n="hero.role"></p>
+            <div class="hero-text">
+                <div class="hero-eyebrow" data-i18n="hero.eyebrow"></div>
+                <h1>Samuele Maroli</h1>
+                <p class="hero-role" data-i18n="hero.role"></p>
 
-            <div class="abstract">
-                <div class="abstract-label" data-i18n="abstract.label"></div>
-                <p data-i18n="hero.description"></p>
-                <p class="keywords"><span data-i18n="keywords.label"></span> RAG Systems · LLM Fine-tuning · Data Engineering · Computer Vision · NLP</p>
+                <div class="abstract">
+                    <div class="abstract-label" data-i18n="abstract.label"></div>
+                    <p data-i18n="hero.description"></p>
+                    <p class="keywords">
+                        <span data-i18n="keywords.label"></span>
+                        <span class="keyword-chip">RAG Systems</span>
+                        <span class="keyword-chip">LLM Fine-tuning</span>
+                        <span class="keyword-chip">Data Engineering</span>
+                        <span class="keyword-chip">Computer Vision</span>
+                        <span class="keyword-chip">NLP</span>
+                    </p>
+                </div>
+
+                <div class="cta-row">
+                    <a href="#experience" class="btn btn-primary" data-i18n="hero.cta1"></a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2"></a>
+                </div>
             </div>
 
-            <div class="cta-row">
-                <a href="#experience" class="btn btn-primary" data-i18n="hero.cta1"></a>
-                <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2"></a>
+            <div class="hero-visual">
+                <svg class="pipeline-diagram" width="170" height="300" viewBox="0 0 170 300" aria-hidden="true">
+                    <text x="0" y="14" class="caption">Fig. 1 — RAG pipeline</text>
+                    <line class="node-line" x1="6" y1="46" x2="6" y2="116"></line>
+                    <line class="node-line" x1="6" y1="126" x2="6" y2="196"></line>
+                    <line class="node-line" x1="6" y1="206" x2="6" y2="276"></line>
+                    <circle class="node-dot" cx="6" cy="40" r="5"></circle>
+                    <circle class="node-dot is-active" cx="6" cy="120" r="5"></circle>
+                    <circle class="node-dot is-active" cx="6" cy="200" r="5"></circle>
+                    <circle class="node-dot" cx="6" cy="280" r="5"></circle>
+                    <text x="22" y="44">Query</text>
+                    <text x="22" y="124" class="is-active">Retrieve</text>
+                    <text x="22" y="204" class="is-active">Rerank</text>
+                    <text x="22" y="284">Generate</text>
+                </svg>
             </div>
         </div>
     </section>
@@ -340,7 +366,7 @@
                 </a>
                 <div class="contact-row">
                     <span class="contact-label" data-i18n="contact.location.label"></span>
-                    <span class="contact-value">Torino, Italia</span>
+                    <span class="contact-value" data-i18n="contact.location.value"></span>
                 </div>
             </div>
         </div>

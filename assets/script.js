@@ -62,6 +62,7 @@ const translations = {
         'contact.linkedin.value': 'Connettiti →',
         'contact.github.label': 'GitHub',
         'contact.location.label': 'Sede',
+        'contact.location.value': 'Torino, Italia',
 
         'footer.text': '© 2026 Samuele Maroli. Disponibile per opportunità full-time da settembre 2026.'
     },
@@ -128,6 +129,7 @@ const translations = {
         'contact.linkedin.value': 'Connect →',
         'contact.github.label': 'GitHub',
         'contact.location.label': 'Location',
+        'contact.location.value': 'Turin, Italy',
 
         'footer.text': '© 2026 Samuele Maroli. Available for full-time opportunities from September 2026.'
     }
