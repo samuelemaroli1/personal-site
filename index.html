@@ -31,405 +31,35 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --bg-primary: #0a0e17;
-            --bg-secondary: #111827;
-            --bg-card: #1a2332;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-primary: #3b82f6;
-            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --border-color: rgba(148, 163, 184, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; line-height: 1.2; }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-        /* Language toggle */
-        .lang-toggle {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            z-index: 1000;
-            display: flex;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-        }
-
-        .lang-btn {
-            padding: 8px 12px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            color: var(--text-secondary);
-            transition: all 0.2s ease;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-        }
-
-        .lang-btn.active {
-            background: var(--accent-gradient);
-            color: white;
-        }
-
-        .lang-btn:hover:not(.active) {
-            color: var(--text-primary);
-            background: rgba(255,255,255,0.05);
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
-            border-radius: 50%;
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.15; }
-            50% { transform: scale(1.1); opacity: 0.25; }
-        }
-
-        .hero-content { position: relative; z-index: 1; }
-
-        .hero-label {
-            display: inline-block;
-            padding: 8px 16px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 24px;
-            color: var(--accent-primary);
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 24px;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 72px);
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(20px, 3vw, 28px);
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            max-width: 700px;
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
-        .cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-
-        .btn {
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-weight: 500;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            border: none;
-        }
-
-        .btn-primary { background: var(--accent-gradient); color: white; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3); }
-        .btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); }
-        .btn-secondary:hover { background: var(--bg-card); border-color: var(--accent-primary); }
-
-        /* Sections */
-        section { padding: 120px 0; }
-
-        .section-header { margin-bottom: 64px; }
-
-        .section-label {
-            color: var(--accent-primary);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-        }
-
-        .section-title { font-size: clamp(36px, 5vw, 48px); margin-bottom: 16px; }
-
-        .section-description { font-size: 18px; color: var(--text-secondary); max-width: 700px; }
-
-        /* Experience */
-        .experience-grid { display: grid; gap: 24px; }
-
-        .experience-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 16px;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .experience-title { font-size: 24px; margin-bottom: 4px; }
-        .experience-company { color: var(--accent-primary); font-size: 18px; font-weight: 500; }
-        .experience-period { color: var(--text-secondary); font-size: 14px; white-space: nowrap; }
-        .experience-description { color: var(--text-secondary); margin-bottom: 20px; line-height: 1.7; }
-
-        .experience-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
-        .tag {
-            padding: 6px 12px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 8px;
-            font-size: 13px;
-            color: var(--accent-primary);
-        }
-
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-
-        .skill-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover { border-color: var(--accent-primary); }
-
-        .skill-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--accent-gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .skill-category h3 { font-size: 20px; margin-bottom: 16px; }
-
-        .skill-list { display: flex; flex-direction: column; gap: 8px; }
-
-        .skill-item {
-            color: var(--text-secondary);
-            font-size: 15px;
-            padding-left: 16px;
-            position: relative;
-        }
-
-        .skill-item::before { content: '→'; position: absolute; left: 0; color: var(--accent-primary); }
-
-        /* Projects */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover { transform: translateY(-4px); border-color: var(--accent-primary); }
-
-        .project-header { display: flex; align-items: start; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-
-        .project-title { font-size: 22px; margin-bottom: 8px; }
-
-        .project-link {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-size: 24px;
-            transition: transform 0.3s ease;
-            display: block;
-            flex-shrink: 0;
-        }
-
-        .project-link:hover { transform: translate(4px, -4px); }
-
-        .project-description { color: var(--text-secondary); margin-bottom: 20px; line-height: 1.7; }
-
-        /* Education */
-        .education-timeline {
-            display: grid;
-            gap: 24px;
-            position: relative;
-            padding-left: 32px;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 12px;
-            bottom: 12px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent-primary), transparent);
-        }
-
-        .education-item {
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-        }
-
-        .education-item::before {
-            content: '';
-            position: absolute;
-            left: -40px;
-            top: 40px;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            border: 3px solid var(--bg-primary);
-        }
-
-        .education-degree { font-size: 22px; margin-bottom: 8px; }
-        .education-school { color: var(--accent-primary); font-size: 18px; margin-bottom: 8px; }
-        .education-details { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .contact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 28px 32px;
-            text-align: left;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .contact-card:hover { transform: translateY(-4px); border-color: var(--accent-primary); }
-
-        .contact-icon { font-size: 28px; flex-shrink: 0; }
-
-        .contact-text { min-width: 0; }
-
-        .contact-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
-
-        .contact-value {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--accent-primary);
-            word-break: break-word;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 48px 0;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            section { padding: 80px 0; }
-            .experience-header { flex-direction: column; align-items: start; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .education-timeline { padding-left: 24px; }
-            .lang-toggle { top: 16px; right: 16px; }
-        }
-
-        html { scroll-behavior: smooth; }
-        ::selection { background: var(--accent-primary); color: white; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <!-- Language Toggle -->
-    <div class="lang-toggle">
-        <button class="lang-btn active" id="btn-it" onclick="setLang('it')">🇮🇹</button>
-        <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧</button>
-    </div>
+    <header class="topbar">
+        <span class="topbar-name">Samuele Maroli</span>
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-it" onclick="setLang('it')">IT</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+    </header>
 
-    <!-- Hero -->
+    <!-- Hero / Abstract -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-label">AI Engineer &amp; Data Scientist</div>
-                <h1>Samuele Maroli</h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
-                <p class="hero-description" data-i18n="hero.description"></p>
-                <div class="cta-buttons">
-                    <a href="#experience" class="btn btn-primary" data-i18n="hero.cta1"></a>
-                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2"></a>
-                </div>
+            <div class="hero-eyebrow" data-i18n="hero.eyebrow"></div>
+            <h1>Samuele Maroli</h1>
+            <p class="hero-role" data-i18n="hero.role"></p>
+
+            <div class="abstract">
+                <div class="abstract-label" data-i18n="abstract.label"></div>
+                <p data-i18n="hero.description"></p>
+                <p class="keywords"><span data-i18n="keywords.label"></span> RAG Systems · LLM Fine-tuning · Data Engineering · Computer Vision · NLP</p>
+            </div>
+
+            <div class="cta-row">
+                <a href="#experience" class="btn btn-primary" data-i18n="hero.cta1"></a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2"></a>
             </div>
         </div>
     </section>
@@ -437,65 +67,62 @@
     <!-- Experience -->
     <section id="experience">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-i18n="exp.label"></div>
-                <h2 class="section-title" data-i18n="exp.title"></h2>
-                <p class="section-description" data-i18n="exp.desc"></p>
+            <div class="section-head">
+                <span class="section-num">1</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="exp.label"></div>
+                    <h2 class="section-title" data-i18n="exp.title"></h2>
+                    <p class="section-description" data-i18n="exp.desc"></p>
+                </div>
             </div>
 
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title" data-i18n="exp1.title"></h3>
-                            <div class="experience-company">DedaAI</div>
+            <div class="entry-list">
+                <div class="entry">
+                    <div class="entry-period" data-i18n="exp1.period"></div>
+                    <div>
+                        <h3 class="entry-title" data-i18n="exp1.title"></h3>
+                        <div class="entry-org">DedaAI</div>
+                        <p class="entry-desc" data-i18n="exp1.desc"></p>
+                        <div class="tag-row">
+                            <span class="tag">RAG Systems</span>
+                            <span class="tag">Qdrant</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">IBM WatsonX</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SharePoint API</span>
                         </div>
-                        <div class="experience-period" data-i18n="exp1.period"></div>
-                    </div>
-                    <p class="experience-description" data-i18n="exp1.desc"></p>
-                    <div class="experience-tags">
-                        <span class="tag">RAG Systems</span>
-                        <span class="tag">Qdrant</span>
-                        <span class="tag">Azure</span>
-                        <span class="tag">IBM WatsonX</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">SharePoint API</span>
                     </div>
                 </div>
 
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title" data-i18n="exp2.title"></h3>
-                            <div class="experience-company">DedaBit</div>
+                <div class="entry">
+                    <div class="entry-period" data-i18n="exp2.period"></div>
+                    <div>
+                        <h3 class="entry-title" data-i18n="exp2.title"></h3>
+                        <div class="entry-org">DedaBit</div>
+                        <p class="entry-desc" data-i18n="exp2.desc"></p>
+                        <div class="tag-row">
+                            <span class="tag">WatsonX</span>
+                            <span class="tag">IBM Cloud</span>
+                            <span class="tag">Microsoft Fabric</span>
+                            <span class="tag">Data Pipeline</span>
+                            <span class="tag">Python</span>
                         </div>
-                        <div class="experience-period" data-i18n="exp2.period"></div>
-                    </div>
-                    <p class="experience-description" data-i18n="exp2.desc"></p>
-                    <div class="experience-tags">
-                        <span class="tag">WatsonX</span>
-                        <span class="tag">IBM Cloud</span>
-                        <span class="tag">Microsoft Fabric</span>
-                        <span class="tag">Data Pipeline</span>
-                        <span class="tag">Python</span>
                     </div>
                 </div>
 
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title" data-i18n="exp3.title"></h3>
-                            <div class="experience-company">SCAI</div>
+                <div class="entry">
+                    <div class="entry-period" data-i18n="exp3.period"></div>
+                    <div>
+                        <h3 class="entry-title" data-i18n="exp3.title"></h3>
+                        <div class="entry-org">SCAI</div>
+                        <p class="entry-desc" data-i18n="exp3.desc"></p>
+                        <div class="tag-row">
+                            <span class="tag">Database Engineering</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Data Cleaning</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">Pandas</span>
                         </div>
-                        <div class="experience-period" data-i18n="exp3.period"></div>
-                    </div>
-                    <p class="experience-description" data-i18n="exp3.desc"></p>
-                    <div class="experience-tags">
-                        <span class="tag">Database Engineering</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Data Cleaning</span>
-                        <span class="tag">ETL</span>
-                        <span class="tag">Pandas</span>
                     </div>
                 </div>
             </div>
@@ -505,15 +132,17 @@
     <!-- Skills -->
     <section id="skills">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-i18n="skills.label"></div>
-                <h2 class="section-title">Tech Stack &amp; Expertise</h2>
+            <div class="section-head">
+                <span class="section-num">2</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="skills.label"></div>
+                    <h2 class="section-title" data-i18n="skills.title"></h2>
+                </div>
             </div>
 
             <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon">🤖</div>
-                    <h3>Artificial Intelligence</h3>
+                <div>
+                    <div class="skill-category-label">Artificial Intelligence</div>
                     <div class="skill-list">
                         <div class="skill-item">RAG Systems (Naive, Advanced, Hybrid)</div>
                         <div class="skill-item">Machine Learning &amp; Deep Learning</div>
@@ -524,9 +153,8 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-icon">💾</div>
-                    <h3>Data Engineering</h3>
+                <div>
+                    <div class="skill-category-label">Data Engineering</div>
                     <div class="skill-list">
                         <div class="skill-item">Database Design &amp; Optimization</div>
                         <div class="skill-item">ETL Pipelines</div>
@@ -537,9 +165,8 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-icon">☁️</div>
-                    <h3>Cloud &amp; DevOps</h3>
+                <div>
+                    <div class="skill-category-label">Cloud &amp; DevOps</div>
                     <div class="skill-list">
                         <div class="skill-item">IBM WatsonX</div>
                         <div class="skill-item">Azure (AI Search, OpenAI)</div>
@@ -549,9 +176,8 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-icon">🐍</div>
-                    <h3>Programming</h3>
+                <div>
+                    <div class="skill-category-label">Programming</div>
                     <div class="skill-list">
                         <div class="skill-item">Python (PyTorch, TensorFlow, FastAPI)</div>
                         <div class="skill-item">Java</div>
@@ -566,19 +192,20 @@
     <!-- Projects -->
     <section id="projects">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-i18n="spec.label"></div>
-                <h2 class="section-title">RAG Systems &amp; AI Research</h2>
-                <p class="section-description" data-i18n="spec.desc"></p>
+            <div class="section-head">
+                <span class="section-num">3</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="proj.label"></div>
+                    <h2 class="section-title" data-i18n="proj.title"></h2>
+                    <p class="section-description" data-i18n="proj.desc"></p>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div><h3 class="project-title" data-i18n="proj1.title"></h3></div>
-                    </div>
-                    <p class="project-description" data-i18n="proj1.desc"></p>
-                    <div class="experience-tags">
+            <div class="project-list">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj1.title"></h3>
+                    <p class="project-desc" data-i18n="proj1.desc"></p>
+                    <div class="tag-row">
                         <span class="tag">RAG Architecture</span>
                         <span class="tag">Vector Databases</span>
                         <span class="tag">LLM Integration</span>
@@ -587,26 +214,22 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div><h3 class="project-title" data-i18n="proj2.title"></h3></div>
-                    </div>
-                    <p class="project-description" data-i18n="proj2.desc"></p>
-                    <div class="experience-tags">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj2.title"></h3>
+                    <p class="project-desc" data-i18n="proj2.desc"></p>
+                    <div class="tag-row">
                         <span class="tag">RAG Systems</span>
                         <span class="tag">Qdrant</span>
-                        <span class="tag">IBM Watson X</span>
+                        <span class="tag">IBM WatsonX</span>
                         <span class="tag">Azure</span>
                         <span class="tag">Cloud Deploy</span>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div><h3 class="project-title" data-i18n="proj3.title"></h3></div>
-                    </div>
-                    <p class="project-description" data-i18n="proj3.desc"></p>
-                    <div class="experience-tags">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj3.title"></h3>
+                    <p class="project-desc" data-i18n="proj3.desc"></p>
+                    <div class="tag-row">
                         <span class="tag">Retrieval Strategies</span>
                         <span class="tag">Reranking</span>
                         <span class="tag">Prompt Engineering</span>
@@ -615,36 +238,29 @@
                 </div>
             </div>
 
-            <div class="section-header" style="margin-top: 80px;">
-                <div class="section-label" data-i18n="other.label"></div>
-                <h2 class="section-title" data-i18n="other.title"></h2>
+            <div class="subsection-head">
+                <div class="subsection-label" data-i18n="other.label"></div>
+                <h2 class="subsection-title" data-i18n="other.title"></h2>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div><h3 class="project-title">POLAR Challenge — SemEval 2026</h3></div>
-                        <div style="display: flex; gap: 12px; flex-shrink: 0;">
-                            <a href="https://aclanthology.org/2026.semeval-1.313/" class="project-link" target="_blank" title="Paper (ACL Anthology)">📄</a>
-                            <a href="https://polar-semeval.github.io/" class="project-link" target="_blank" title="Challenge page">↗</a>
-                        </div>
-                    </div>
-                    <p class="project-description" data-i18n="proj5.desc"></p>
-                    <div class="experience-tags">
+            <div class="project-list">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj5.title"></h3>
+                    <p class="project-desc" data-i18n="proj5.desc"></p>
+                    <div class="tag-row">
                         <span class="tag">NLP</span>
                         <span class="tag">LoRA</span>
                         <span class="tag">Fine-tuning</span>
                         <span class="tag">Text Classification</span>
                         <span class="tag">Published Paper</span>
                     </div>
+                    <p class="citation"><span data-i18n="proj5.cite"></span> — <a href="https://aclanthology.org/2026.semeval-1.313/" target="_blank" rel="noopener">ACL Anthology ↗</a> · <a href="https://polar-semeval.github.io/" target="_blank" rel="noopener">challenge page ↗</a></p>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <div><h3 class="project-title">Semantic Correspondence</h3></div>
-                    </div>
-                    <p class="project-description" data-i18n="proj4.desc"></p>
-                    <div class="experience-tags">
+                <div class="project">
+                    <h3 class="project-title" data-i18n="proj4.title"></h3>
+                    <p class="project-desc" data-i18n="proj4.desc"></p>
+                    <div class="tag-row">
                         <span class="tag">Computer Vision</span>
                         <span class="tag">DINOv2</span>
                         <span class="tag">SAM</span>
@@ -658,31 +274,40 @@
     <!-- Education -->
     <section id="education">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-i18n="edu.label"></div>
-                <h2 class="section-title" data-i18n="edu.title"></h2>
+            <div class="section-head">
+                <span class="section-num">4</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="edu.label"></div>
+                    <h2 class="section-title" data-i18n="edu.title"></h2>
+                </div>
             </div>
 
-            <div class="education-timeline">
-                <div class="education-item">
-                    <h3 class="education-degree" data-i18n="edu1.degree"></h3>
-                    <div class="education-school">Politecnico di Torino</div>
-                    <div class="education-details" data-i18n="edu1.details"></div>
-                    <p class="experience-description" data-i18n="edu1.desc"></p>
+            <div class="edu-list">
+                <div class="edu-entry">
+                    <div class="edu-period" data-i18n="edu1.details"></div>
+                    <div>
+                        <h3 class="edu-degree" data-i18n="edu1.degree"></h3>
+                        <div class="edu-school">Politecnico di Torino</div>
+                        <p class="edu-desc" data-i18n="edu1.desc"></p>
+                    </div>
                 </div>
 
-                <div class="education-item">
-                    <h3 class="education-degree" data-i18n="edu2.degree"></h3>
-                    <div class="education-school">Politecnico di Torino</div>
-                    <div class="education-details" data-i18n="edu2.details"></div>
-                    <p class="experience-description" data-i18n="edu2.desc"></p>
+                <div class="edu-entry">
+                    <div class="edu-period" data-i18n="edu2.details"></div>
+                    <div>
+                        <h3 class="edu-degree" data-i18n="edu2.degree"></h3>
+                        <div class="edu-school">Politecnico di Torino</div>
+                        <p class="edu-desc" data-i18n="edu2.desc"></p>
+                    </div>
                 </div>
 
-                <div class="education-item">
-                    <h3 class="education-degree" data-i18n="edu3.degree"></h3>
-                    <div class="education-school">ITIS Majorana — Grugliasco (TO)</div>
-                    <div class="education-details" data-i18n="edu3.details"></div>
-                    <p class="experience-description" data-i18n="edu3.desc"></p>
+                <div class="edu-entry">
+                    <div class="edu-period" data-i18n="edu3.details"></div>
+                    <div>
+                        <h3 class="edu-degree" data-i18n="edu3.degree"></h3>
+                        <div class="edu-school">ITIS Majorana — Grugliasco (TO)</div>
+                        <p class="edu-desc" data-i18n="edu3.desc"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -691,43 +316,31 @@
     <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-i18n="contact.label"></div>
-                <h2 class="section-title" data-i18n="contact.title"></h2>
-                <p class="section-description" data-i18n="contact.desc"></p>
+            <div class="section-head">
+                <span class="section-num">5</span>
+                <div class="section-head-text">
+                    <div class="mono" data-i18n="contact.label"></div>
+                    <h2 class="section-title" data-i18n="contact.title"></h2>
+                    <p class="section-description" data-i18n="contact.desc"></p>
+                </div>
             </div>
 
-            <div class="contact-grid">
-                <a href="mailto:samuele.maroli@gmail.com" class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-text">
-                        <div class="contact-label">Email</div>
-                        <div class="contact-value">samuele.maroli@gmail.com</div>
-                    </div>
+            <div class="contact-list">
+                <a href="mailto:samuele.maroli@gmail.com" class="contact-row">
+                    <span class="contact-label" data-i18n="contact.email.label"></span>
+                    <span class="contact-value">samuele.maroli@gmail.com</span>
                 </a>
-
-                <a href="https://www.linkedin.com/in/samuele-maroli-3b2127255" class="contact-card" target="_blank">
-                    <div class="contact-icon">💼</div>
-                    <div class="contact-text">
-                        <div class="contact-label">LinkedIn</div>
-                        <div class="contact-value" data-i18n="contact.linkedin"></div>
-                    </div>
+                <a href="https://www.linkedin.com/in/samuele-maroli-3b2127255" class="contact-row" target="_blank" rel="noopener">
+                    <span class="contact-label" data-i18n="contact.linkedin.label"></span>
+                    <span class="contact-value" data-i18n="contact.linkedin.value"></span>
                 </a>
-
-                <a href="https://github.com/samuelemaroli1" class="contact-card" target="_blank">
-                    <div class="contact-icon">👨‍💻</div>
-                    <div class="contact-text">
-                        <div class="contact-label">GitHub</div>
-                        <div class="contact-value">samuelemaroli1</div>
-                    </div>
+                <a href="https://github.com/samuelemaroli1" class="contact-row" target="_blank" rel="noopener">
+                    <span class="contact-label" data-i18n="contact.github.label"></span>
+                    <span class="contact-value">samuelemaroli1</span>
                 </a>
-
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-text">
-                        <div class="contact-label">Location</div>
-                        <div class="contact-value">Torino, Italia</div>
-                    </div>
+                <div class="contact-row">
+                    <span class="contact-label" data-i18n="contact.location.label"></span>
+                    <span class="contact-value">Torino, Italia</span>
                 </div>
             </div>
         </div>
@@ -736,165 +349,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p data-i18n="footer.text"></p>
+            <p class="footer-text" data-i18n="footer.text"></p>
         </div>
     </footer>
 
-    <script>
-        const translations = {
-            it: {
-                'hero.subtitle': 'Specializzato in Intelligenza Artificiale, RAG Systems e Machine Learning',
-                'hero.description': 'Ingegnere informatico con focus su AI e Data Science, attualmente impegnato nello sviluppo di soluzioni avanzate di Retrieval-Augmented Generation e sistemi intelligenti presso DedaAI. Appassionato nell\'uso consapevole delle ultime tecnologie LLM, che integro attivamente nel lavoro quotidiano conoscendone potenzialità e limiti.',
-                'hero.cta1': 'Scopri di più',
-                'hero.cta2': 'Contattami',
-
-                'exp.label': 'Esperienza',
-                'exp.title': 'Il mio percorso professionale',
-                'exp.desc': 'Dal 2024 ho sviluppato competenze avanzate in AI, lavorando su progetti innovativi che spaziano dai chatbot RAG alla data engineering su larga scala.',
-                'exp1.title': 'Apprendista AI Scientist',
-                'exp1.period': 'Gen 2026 – Presente',
-                'exp1.desc': 'Sviluppo di sistemi RAG avanzati per clienti enterprise. Responsabile dell\'architettura e implementazione di soluzioni AI end-to-end, con focus su ottimizzazione delle performance e integrazione con sistemi esistenti. Stack: Python, Qdrant, Azure, LLaMA, IBM WatsonX, SharePoint Graph API.',
-                'exp2.title': 'Apprendista AI Scientist',
-                'exp2.period': '2025 – Dic 2025',
-                'exp2.desc': 'Sviluppo di pipeline di elaborazione dati automatizzate per la gestione e normalizzazione di file eterogenei in un\'unica struttura unificata. Creazione di chatbot con WatsonX su IBM Cloud, implementazione di soluzioni RAG per l\'ottimizzazione di processi aziendali.',
-                'exp3.title': 'Data Analyst & Developer',
-                'exp3.period': 'Mag 2024 – Dic 2024',
-                'exp3.desc': 'Pulizia e normalizzazione di database enterprise di grandi dimensioni. Creazione di relazioni dati complesse e ottimizzazione di strutture esistenti. Sviluppo del primo progetto chatbot con tecnologie RAG.',
-
-                'skills.label': 'Competenze',
-
-                'spec.label': 'Specializzazione',
-                'spec.desc': 'La mia area di specializzazione principale: sviluppo e ottimizzazione di sistemi RAG enterprise, dalla ricerca all\'implementazione production-ready.',
-                'proj1.title': 'Enterprise RAG System (Tesi Magistrale)',
-                'proj1.desc': 'Ricerca e sviluppo di un sistema RAG production-ready per applicazioni enterprise. Esplorazione completa di chunking strategies, embedding models, retrieval optimization, e integrazione LLM. Focus su performance, scalabilità e accuracy per il Politecnico di Torino.',
-                'proj2.title': 'Multi-Client RAG Solutions @ Deda',
-                'proj2.desc': 'Progettazione e implementazione di sistemi RAG customizzati per diversi clienti enterprise. Gestione dell\'intero ciclo di sviluppo: dall\'analisi dei requisiti all\'architettura, implementazione e deployment su cloud con stack Azure, Qdrant e IBM WatsonX.',
-                'proj3.title': 'RAG Optimization & Experimentation',
-                'proj3.desc': 'Sperimentazione continua su tecniche avanzate di RAG: hybrid search, reranking strategies, query expansion, context compression, e prompt engineering per massimizzare la qualità delle risposte in contesti enterprise.',
-
-                'other.label': 'Altri Progetti',
-                'other.title': 'Progetti Accademici',
-                'proj4.desc': 'Progetto universitario (Advanced ML) — implementazione di algoritmi di corrispondenza semantica utilizzando modelli foundation come DINOv2 e SAM per identificare corrispondenze visive tra immagini.',
-                'proj5.desc': 'Partecipazione alla challenge POLAR-SemEval (Task 9 — Polarization Detection) con fine-tuning di modelli linguistici tramite LoRA per la classificazione del linguaggio naturale. Paper pubblicato in ACL Anthology (SemEval 2026).',
-
-                'edu.label': 'Formazione',
-                'edu.title': 'Percorso accademico',
-                'edu1.degree': 'Laurea Magistrale in Artificial Intelligence & Data Science',
-                'edu1.details': '2024 – Settembre 2026 (previsto)',
-                'edu1.desc': 'Specializzazione in intelligenza artificiale con focus su deep learning, computer vision, NLP e sistemi di retrieval avanzati. Materia a scelta: Large Language Models. Tesi sui sistemi RAG enterprise.',
-                'edu2.degree': 'Laurea Triennale in Ingegneria Informatica',
-                'edu2.details': '2019 – Marzo 2024 • Voto: 94/110',
-                'edu2.desc': 'Fondamenti di informatica, algoritmi, basi di dati, ingegneria del software e intelligenza artificiale. Tirocinio presso SCAI con sviluppo di soluzioni data-driven.',
-                'edu3.degree': 'Diploma di Perito Informatico',
-                'edu3.details': '2014 – 2019 • Voto: 92/100',
-                'edu3.desc': 'Formazione tecnica in informatica, programmazione, reti e sistemi operativi.',
-
-                'contact.label': 'Contatti',
-                'contact.title': 'Mettiamoci in contatto',
-                'contact.desc': 'Interessato a collaborare o vuoi saperne di più? Sarò felice di rispondere.',
-                'contact.linkedin': 'Connettiti',
-
-                'footer.text': '© 2026 Samuele Maroli. Disponibile per opportunità full-time da Settembre 2026.'
-            },
-            en: {
-                'hero.subtitle': 'Specialised in Artificial Intelligence, RAG Systems and Machine Learning',
-                'hero.description': 'Computer engineer focused on AI and Data Science, currently developing advanced Retrieval-Augmented Generation solutions and intelligent systems at DedaAI. Passionate about the conscious, informed use of the latest LLM technologies, actively integrating them into daily work while understanding their potential and limits.',
-                'hero.cta1': 'Learn more',
-                'hero.cta2': 'Contact me',
-
-                'exp.label': 'Experience',
-                'exp.title': 'My professional journey',
-                'exp.desc': 'Since 2024 I have developed advanced AI skills, working on innovative projects ranging from RAG chatbots to large-scale data engineering.',
-                'exp1.title': 'Apprentice AI Scientist',
-                'exp1.period': 'Jan 2026 – Present',
-                'exp1.desc': 'Development of advanced RAG systems for enterprise clients. Responsible for architecture and end-to-end AI solution implementation, with focus on performance optimisation and integration with existing systems. Stack: Python, Qdrant, Azure, LLaMA, IBM WatsonX, SharePoint Graph API.',
-                'exp2.title': 'Apprentice AI Scientist',
-                'exp2.period': '2025 – Dec 2025',
-                'exp2.desc': 'Development of automated data processing pipelines for managing and normalising heterogeneous files into a unified structure. Creation of chatbots with WatsonX on IBM Cloud, implementation of RAG solutions to optimise business processes.',
-                'exp3.title': 'Data Analyst & Developer',
-                'exp3.period': 'May 2024 – Dec 2024',
-                'exp3.desc': 'Cleaning and normalisation of large enterprise databases. Creation of complex data relationships and optimisation of existing structures. Development of the first RAG chatbot project.',
-
-                'skills.label': 'Skills',
-
-                'spec.label': 'Specialisation',
-                'spec.desc': 'My main specialisation area: development and optimisation of enterprise RAG systems, from research to production-ready implementation.',
-                'proj1.title': 'Enterprise RAG System (Master\'s Thesis)',
-                'proj1.desc': 'Research and development of a production-ready RAG system for enterprise applications. Complete exploration of chunking strategies, embedding models, retrieval optimisation, and LLM integration. Focus on performance, scalability and accuracy at Politecnico di Torino.',
-                'proj2.title': 'Multi-Client RAG Solutions @ Deda',
-                'proj2.desc': 'Design and implementation of customised RAG systems for various enterprise clients. Full development lifecycle management: from requirements analysis to architecture, implementation and cloud deployment using Azure, Qdrant and IBM WatsonX.',
-                'proj3.title': 'RAG Optimization & Experimentation',
-                'proj3.desc': 'Continuous experimentation on advanced RAG techniques: hybrid search, reranking strategies, query expansion, context compression, and prompt engineering to maximise response quality in enterprise contexts.',
-
-                'other.label': 'Other Projects',
-                'other.title': 'Academic Projects',
-                'proj4.desc': 'University project (Advanced ML) — implementation of semantic correspondence algorithms using foundation models such as DINOv2 and SAM to identify visual correspondences between images.',
-                'proj5.desc': 'Participation in the POLAR-SemEval challenge (Task 9 — Polarization Detection), fine-tuning language models via LoRA for natural language classification. Paper published in the ACL Anthology (SemEval 2026).',
-
-                'edu.label': 'Education',
-                'edu.title': 'Academic background',
-                'edu1.degree': 'Master\'s Degree in Artificial Intelligence & Data Science',
-                'edu1.details': '2024 – September 2026 (expected)',
-                'edu1.desc': 'Specialisation in artificial intelligence with focus on deep learning, computer vision, NLP and advanced retrieval systems. Elective: Large Language Models. Thesis on enterprise RAG systems.',
-                'edu2.degree': 'Bachelor\'s Degree in Computer Engineering',
-                'edu2.details': '2019 – March 2024 • Grade: 94/110',
-                'edu2.desc': 'Computer science fundamentals, algorithms, databases, software engineering and artificial intelligence. Internship at SCAI developing data-driven solutions.',
-                'edu3.degree': 'High School Diploma — IT Technician',
-                'edu3.details': '2014 – 2019 • Grade: 92/100',
-                'edu3.desc': 'Technical training in computer science, programming, networks and operating systems.',
-
-                'contact.label': 'Contact',
-                'contact.title': 'Let\'s get in touch',
-                'contact.desc': 'Interested in collaborating or want to know more? I\'ll be happy to reply.',
-                'contact.linkedin': 'Connect',
-
-                'footer.text': '© 2026 Samuele Maroli. Available for full-time opportunities from September 2026.'
-            }
-        };
-
-        let currentLang = 'it';
-
-        function setLang(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-            const t = translations[lang];
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key] !== undefined) el.textContent = t[key];
-            });
-        }
-
-        // Init
-        setLang('it');
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // Scroll reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-
-        document.querySelectorAll('.experience-card, .skill-category, .project-card, .education-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
