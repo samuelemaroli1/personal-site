@@ -1,11 +1,17 @@
 const translations = {
     it: {
-        'hero.eyebrow': 'AI Engineer — Data Scientist — Torino',
-        'hero.role': 'Sistemi RAG enterprise, LLM fine-tuning, data engineering',
-        'abstract.label': 'Abstract',
-        'hero.description': 'Ingegnere informatico con focus su AI e Data Science, attualmente impegnato nello sviluppo di soluzioni avanzate di Retrieval-Augmented Generation e sistemi intelligenti presso DedaAI. Appassionato nell\'uso consapevole delle ultime tecnologie LLM, che integro attivamente nel lavoro quotidiano conoscendone potenzialità e limiti.',
-        'keywords.label': 'Parole chiave:',
-        'hero.cta1': 'Vai all\'esperienza',
+        'rail.top': 'Profilo',
+        'rail.research': 'Ricerca',
+        'rail.experience': 'Esperienza',
+        'rail.projects': 'Progetti',
+        'rail.skills': 'Competenze',
+        'rail.education': 'Formazione',
+        'rail.contact': 'Contatti',
+
+        'hero.eyebrow': 'AI Engineer & Data Scientist — Torino',
+        'hero.headline': 'Costruisco sistemi RAG che funzionano davvero in produzione.',
+        'hero.description': 'Ingegnere informatico specializzato in Retrieval-Augmented Generation, fine-tuning di LLM e data engineering enterprise. Attualmente in DedaAI.',
+        'hero.cta1': 'Il mio paper',
         'hero.cta2': 'Contattami',
 
         'exp.label': 'Esperienza',
@@ -72,12 +78,18 @@ const translations = {
         'footer.text': '© 2026 Samuele Maroli. Disponibile per opportunità full-time da settembre 2026.'
     },
     en: {
-        'hero.eyebrow': 'AI Engineer — Data Scientist — Turin, Italy',
-        'hero.role': 'Enterprise RAG systems, LLM fine-tuning, data engineering',
-        'abstract.label': 'Abstract',
-        'hero.description': 'Computer engineer focused on AI and Data Science, currently developing advanced Retrieval-Augmented Generation solutions and intelligent systems at DedaAI. Passionate about the conscious, informed use of the latest LLM technologies, actively integrating them into daily work while understanding their potential and limits.',
-        'keywords.label': 'Keywords:',
-        'hero.cta1': 'View experience',
+        'rail.top': 'Profile',
+        'rail.research': 'Research',
+        'rail.experience': 'Experience',
+        'rail.projects': 'Projects',
+        'rail.skills': 'Skills',
+        'rail.education': 'Education',
+        'rail.contact': 'Contact',
+
+        'hero.eyebrow': 'AI Engineer & Data Scientist — Turin, Italy',
+        'hero.headline': 'I build RAG systems that actually work in production.',
+        'hero.description': 'Computer engineer specialising in Retrieval-Augmented Generation, LLM fine-tuning and enterprise data engineering. Currently at DedaAI.',
+        'hero.cta1': 'My paper',
         'hero.cta2': 'Contact me',
 
         'exp.label': 'Experience',
@@ -166,3 +178,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
+
+// Rail scroll-spy: highlight the index tab for the section in view
+const railLinks = document.querySelectorAll('.rail-link');
+const railMap = new Map();
+railLinks.forEach(link => {
+    const id = link.getAttribute('href').slice(1);
+    const section = document.getElementById(id);
+    if (section) railMap.set(section, link);
+});
+
+const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const link = railMap.get(entry.target);
+        if (!link) return;
+        link.classList.toggle('is-active', entry.isIntersecting);
+    });
+}, { rootMargin: '-40% 0px -55% 0px' });
+
+railMap.forEach((_, section) => spy.observe(section));
