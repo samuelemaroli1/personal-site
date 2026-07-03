@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-    <rect width="64" height="64" rx="10" fill="#2B5B84"/>
-    <text x="32" y="39" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" text-anchor="middle"><tspan fill="#FFD43B">&lt;</tspan><tspan fill="#F6F0E3">SM</tspan><tspan fill="#FFD43B">/&gt;</tspan></text>
-    <rect x="18" y="47" width="28" height="4" rx="2" fill="#FFD43B"/>
-</svg>
